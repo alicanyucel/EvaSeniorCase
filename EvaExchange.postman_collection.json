@@ -1,0 +1,143 @@
+{
+  "info": {
+    "name": "EvaExchange API",
+    "description": "Postman collection for EvaExchange Trading API – BUY/SELL operations, Shares, Portfolios",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Shares",
+      "item": [
+        {
+          "name": "Register Share",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"symbol\": \"XYZ\",\n  \"currentPrice\": 45.50\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/Shares/Register",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "Shares", "Register"]
+            }
+          }
+        },
+        {
+          "name": "Update Share Price",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"symbol\": \"ABC\",\n  \"newPrice\": 27.00\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/Shares/UpdatePrice",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "Shares", "UpdatePrice"]
+            }
+          }
+        },
+        {
+          "name": "Get All Shares",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/Shares/GetAll",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "Shares", "GetAll"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Portfolios",
+      "item": [
+        {
+          "name": "Register Portfolio",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Test Portfolio\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/Portfolios/Register",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "Portfolios", "Register"]
+            }
+          }
+        },
+        {
+          "name": "Get All Portfolios",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/Portfolios/GetAll",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "Portfolios", "GetAll"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Trades",
+      "item": [
+        {
+          "name": "BUY Trade",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"portfolioId\": \"<PORTFOLIO_ID>\",\n  \"shareSymbol\": \"ABC\",\n  \"type\": \"BUY\",\n  \"noOfShares\": 10\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/Trades/Buy",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "Trades", "Buy"]
+            }
+          }
+        },
+        {
+          "name": "SELL Trade",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"portfolioId\": \"<PORTFOLIO_ID>\",\n  \"shareSymbol\": \"ABC\",\n  \"type\": \"SELL\",\n  \"noOfShares\": 5\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/Trades/Sell",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "Trades", "Sell"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

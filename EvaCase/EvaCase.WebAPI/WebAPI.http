@@ -1,0 +1,6 @@
+@EvaCase.WebAPI_HostAddress = http://localhost:5193
+
+GET {{EvaCase.WebAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="EvaCase/EvaCase.Application/EvaCase.Application.csproj" />
+  <Project Path="EvaCase/EvaCase.Domain/EvaCase.Domain.csproj" />
+  <Project Path="EvaCase/EvaCase.Infrastructure/EvaCase.Infrastructure.csproj" />
+  <Project Path="EvaCase/EvaCase.WebAPI/EvaCase.WebAPI.csproj" />
+</Solution>
